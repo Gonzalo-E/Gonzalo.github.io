@@ -29,10 +29,13 @@
               "base": "docs",
               "browser": ""
             },
-            "styles": ["src/styles.css"]
+            "styles": [
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
+              "baseHref": "/Gonzalo.github.io/",
               "budgets": [
                 {
                   "type": "initial",
