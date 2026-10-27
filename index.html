@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --accent: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      color: var(--accent);
+      font-size: 2.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+
+    .card h3 {
+      margin-bottom: .5rem;
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      opacity: .7;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tu Nombre</h1>
+    <p>Desarrollador Web / Ingeniero de Software</p>
+  </header>
+  <main class="grid">
+    <div class="card">
+      <h3>Proyecto 1</h3>
+      <p>Descripción breve del proyecto.</p>
+      <a href="https://github.com" target="_blank">Ver código &rarr;</a>
+    </div>
+    <div class="card">
+      <h3>Proyecto 2</h3>
+      <p>Descripción breve del proyecto.</p>
+      <a href="https://github.com" target="_blank">Ver código &rarr;</a>
+    </div>
+  </main>
+  <footer>
+    <p>Contacto: <a href="mailto:tu@email.com" style="color:var(--accent);">tu@email.com</a></p>
+  </footer>
+</body>
+
+</html>
