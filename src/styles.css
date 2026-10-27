@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Design System - Gonzalo Jose Esqueche Geldres
+   Bespoke Architectural Aesthetic inspired by esrbespoke.au
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-main: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-elevated: #181818;
+  --bg-card: #141414;
+  --bg-card-hover: #1c1c1c;
+  --bg-tag: rgba(255, 255, 255, 0.05);
+
+  /* Borders & Rules */
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-active: rgba(255, 255, 255, 0.4);
+
+  /* Typography */
+  --text-main: #f4f4f2;
+  --text-muted: #8e8e8e;
+  --text-dim: #5c5c5c;
+  --accent-warm: #d4af37; /* subtle refined gold/bronze accent */
+  --accent-bone: #e2ded5;
+
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --max-width: 1320px;
+  --transition-bezier: cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-fast: 0.25s var(--transition-bezier);
+  --transition-normal: 0.5s var(--transition-bezier);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-main);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Typography Utilities */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Base Elements */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}

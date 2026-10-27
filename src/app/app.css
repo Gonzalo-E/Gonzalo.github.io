@@ -1,0 +1,655 @@
+/* ==========================================================================
+   Gonzalo Jose Esqueche Geldres - Editorial Bespoke Component Styles
+   Inspired by esrbespoke.au (High-end architectural minimalism)
+   ========================================================================== */
+
+.bespoke-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Bespoke Header
+   -------------------------------------------------------------------------- */
+.bespoke-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  margin: 0 -1.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-monogram {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.88rem;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.35rem 0.55rem;
+  line-height: 1;
+  border-radius: 2px;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.brand-role-mono {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-item {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.nav-item:hover {
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-mono-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--border-light);
+  padding: 0.45rem 1rem;
+  font-size: 0.76rem;
+  color: #ffffff;
+  border-radius: 2px;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.btn-mono-outline:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* --------------------------------------------------------------------------
+   Bespoke Main Content
+   -------------------------------------------------------------------------- */
+.bespoke-main {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.bespoke-hero {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 4rem;
+  margin-bottom: 5rem;
+}
+
+.hero-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 2.5rem;
+}
+
+.hero-headline-wrapper {
+  margin-bottom: 3.5rem;
+}
+
+.hero-headline {
+  font-size: clamp(2.8rem, 6.8vw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+}
+
+.hero-statement-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.hero-statement {
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  max-width: 680px;
+}
+
+.specs-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+.spec-key {
+  color: var(--text-dim);
+}
+
+.spec-val {
+  color: #ffffff;
+  text-align: right;
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link-underline:hover {
+  color: var(--accent-bone);
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-editorial-solid {
+  background: #ffffff;
+  color: #000000;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.btn-editorial-solid:hover {
+  background: #dcdcd9;
+}
+
+.btn-editorial-ghost {
+  border: 1px solid var(--border-light);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.78rem;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.btn-editorial-ghost:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   Sections Common Label Bar
+   -------------------------------------------------------------------------- */
+.bespoke-section {
+  margin-bottom: 5.5rem;
+  scroll-margin-top: 6rem;
+}
+
+.section-label-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-num {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.section-name {
+  color: var(--text-muted);
+}
+
+.section-rule {
+  flex-grow: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+/* --------------------------------------------------------------------------
+   Section 01: Experience
+   -------------------------------------------------------------------------- */
+.experience-block {
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  padding: 2.75rem 3rem;
+  border-radius: 4px;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3.5rem;
+}
+
+.exp-company {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.exp-role-badge {
+  font-size: 0.85rem;
+  color: var(--accent-bone);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+}
+
+.exp-time-loc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.exp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.exp-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.item-dash {
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section 02: Featured Project
+   -------------------------------------------------------------------------- */
+.project-block {
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  padding: 2.75rem 3rem;
+  border-radius: 4px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.project-cat {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 0.65rem;
+}
+
+.project-title {
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.project-stack {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.stack-tag {
+  border: 1px solid var(--border-light);
+  background: var(--bg-tag);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  border-radius: 2px;
+  color: var(--text-main);
+}
+
+.project-desc-statement {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.project-source-card {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.source-label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.source-link {
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.source-link:hover {
+  color: var(--accent-bone);
+}
+
+/* --------------------------------------------------------------------------
+   Section 03: Skills (Architectural Table)
+   -------------------------------------------------------------------------- */
+.skills-editorial-table {
+  border-top: 1px solid var(--border-light);
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border-light);
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.skills-cell-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.skills-cell-content {
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+.highlight-word {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.practices-grid {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.practice-pill {
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  padding: 0.45rem 0.85rem;
+  border-radius: 2px;
+  font-size: 0.76rem;
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   Section 04: Education
+   -------------------------------------------------------------------------- */
+.education-editorial-list {
+  border-top: 1px solid var(--border-light);
+}
+
+.edu-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 220px;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+  align-items: baseline;
+  gap: 1.5rem;
+  transition: background var(--transition-fast);
+}
+
+.edu-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.edu-index {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.edu-institution-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.edu-inst {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.edu-degree {
+  font-size: 0.76rem;
+  color: var(--accent-bone);
+}
+
+.edu-period-col {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   Section 05: Languages
+   -------------------------------------------------------------------------- */
+.languages-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.lang-card {
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  padding: 1.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.lang-name {
+  font-size: 0.88rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.lang-level {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Section 06 / Footer
+   -------------------------------------------------------------------------- */
+.bespoke-footer {
+  border-top: 1px solid var(--border-light);
+  padding-top: 4rem;
+  margin-top: 6rem;
+}
+
+.footer-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.footer-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.footer-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.footer-contacts-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+}
+
+.entry-label {
+  color: var(--text-dim);
+}
+
+.entry-val {
+  color: #ffffff;
+}
+
+.entry-val:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  font-size: 0.74rem;
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .header-nav {
+    display: none;
+  }
+
+  .hero-statement-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .exp-grid, .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skills-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .edu-row {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .edu-period-col {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+
+  .languages-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-block, .project-block {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .footer-entry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

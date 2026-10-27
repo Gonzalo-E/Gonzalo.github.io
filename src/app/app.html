@@ -1,0 +1,286 @@
+<div class="bespoke-page">
+  <!-- Top Editorial Header (ESR Bespoke Style) -->
+  <header class="bespoke-header">
+    <div class="header-inner">
+      <a href="#" class="header-brand">
+        <span class="brand-monogram">GE</span>
+        <div class="brand-titles">
+          <span class="brand-name">{{ name }}</span>
+          <span class="brand-role-mono mono">{{ role }}</span>
+        </div>
+      </a>
+
+      <nav class="header-nav mono">
+        <a href="#experience" class="nav-item">01 / Experience</a>
+        <a href="#project" class="nav-item">02 / Project</a>
+        <a href="#skills" class="nav-item">03 / Skills</a>
+        <a href="#education" class="nav-item">04 / Education</a>
+        <a href="#contact" class="nav-item">05 / Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer" class="btn-mono-outline mono">
+          LinkedIn &nearr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="bespoke-main">
+    <!-- Hero / Cover Section -->
+    <section class="bespoke-hero">
+      <div class="hero-meta-row mono">
+        <div class="meta-item">[ 00 / PORTFOLIO ]</div>
+        <div class="meta-item">{{ location }} &bull; {{ country }}</div>
+        <div class="meta-item">CURRENT: PLANER.IA</div>
+      </div>
+
+      <div class="hero-headline-wrapper">
+        <h1 class="hero-headline">
+          GONZALO JOSE<br/>ESQUECHE GELDRES
+        </h1>
+      </div>
+
+      <div class="hero-statement-grid">
+        <div class="statement-col-left">
+          <p class="hero-statement">
+            {{ role }}. Focused on information security governance, cyber incident response, vulnerability analysis, and full-fidelity web and desktop development.
+          </p>
+        </div>
+
+        <div class="statement-col-right mono">
+          <div class="specs-block">
+            <div class="spec-row">
+              <span class="spec-key">ROLE</span>
+              <span class="spec-val">{{ role }}</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">PERIOD</span>
+              <span class="spec-val">FEB 2026 &ndash; PRESENT</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">LOCATION</span>
+              <span class="spec-val">{{ location }}</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">CONTACT</span>
+              <a [href]="'mailto:' + email" class="spec-val link-underline">{{ email }}</a>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#project" class="btn-editorial-solid mono">
+              View Featured Work &darr;
+            </a>
+
+            <button (click)="copyEmail()" class="btn-editorial-ghost mono">
+              {{ copiedEmail() ? '[ EMAIL COPIED ]' : '[ COPY EMAIL ]' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 01: Experience -->
+    <section id="experience" class="bespoke-section">
+      <div class="section-label-bar mono">
+        <span class="section-num">01</span>
+        <span class="section-name">EXPERIENCE</span>
+        <span class="section-rule"></span>
+      </div>
+
+      <div *ngFor="let exp of experience" class="experience-block">
+        <div class="exp-grid">
+          <div class="exp-left-col">
+            <h2 class="exp-company">{{ exp.company }}</h2>
+            <p class="exp-role-badge mono">{{ exp.role }}</p>
+            <div class="exp-time-loc mono">
+              <span class="period-text">{{ exp.period }}</span>
+              <span class="loc-text">{{ exp.location }}</span>
+            </div>
+          </div>
+
+          <div class="exp-right-col">
+            <ul class="exp-list">
+              <li *ngFor="let bullet of exp.bullets" class="exp-list-item">
+                <span class="item-dash mono">&mdash;</span>
+                <span class="item-text">{{ bullet }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Featured Project -->
+    <section id="project" class="bespoke-section">
+      <div class="section-label-bar mono">
+        <span class="section-num">02</span>
+        <span class="section-name">FEATURED PROJECT</span>
+        <span class="section-rule"></span>
+      </div>
+
+      <div class="project-block">
+        <div class="project-grid">
+          <div class="project-left-col">
+            <span class="project-cat mono">[ DESKTOP OVERLAY TOOL ]</span>
+            <h2 class="project-title">{{ project.name }}</h2>
+
+            <div class="project-stack mono">
+              <span *ngFor="let item of project.stack" class="stack-tag">{{ item }}</span>
+            </div>
+
+            <div class="project-links-row">
+              <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="btn-mono-outline mono">
+                Repository &nearr;
+              </a>
+            </div>
+          </div>
+
+          <div class="project-right-col">
+            <p class="project-desc-statement">
+              {{ project.description }}
+            </p>
+
+            <div class="project-source-card mono">
+              <span class="source-label">SOURCE URL</span>
+              <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="source-link">
+                {{ project.displayUrl }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 03: Skills -->
+    <section id="skills" class="bespoke-section">
+      <div class="section-label-bar mono">
+        <span class="section-num">03</span>
+        <span class="section-name">SKILLS &amp; COMPETENCIES</span>
+        <span class="section-rule"></span>
+      </div>
+
+      <div class="skills-editorial-table">
+        <div class="skills-row">
+          <div class="skills-cell-label mono">Languages</div>
+          <div class="skills-cell-content">
+            <span *ngFor="let lang of skills.languages; let last = last" class="skill-name">
+              {{ lang }}<span *ngIf="!last" class="comma-sep">, </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <div class="skills-cell-label mono">Frameworks</div>
+          <div class="skills-cell-content">
+            <span *ngFor="let fw of skills.frameworks; let last = last" class="skill-name highlight-word">
+              {{ fw }}<span *ngIf="!last" class="comma-sep">, </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <div class="skills-cell-label mono">Databases</div>
+          <div class="skills-cell-content">
+            <span *ngFor="let db of skills.databases; let last = last" class="skill-name">
+              {{ db }}<span *ngIf="!last" class="comma-sep">, </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="skills-row">
+          <div class="skills-cell-label mono">Practices</div>
+          <div class="skills-cell-content">
+            <div class="practices-grid">
+              <span *ngFor="let item of skills.practices" class="practice-pill mono">
+                {{ item }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 04: Education -->
+    <section id="education" class="bespoke-section">
+      <div class="section-label-bar mono">
+        <span class="section-num">04</span>
+        <span class="section-name">EDUCATION &amp; CERTIFICATIONS</span>
+        <span class="section-rule"></span>
+      </div>
+
+      <div class="education-editorial-list">
+        <div *ngFor="let edu of education; let i = index" class="edu-row">
+          <div class="edu-index mono">0{{ i + 1 }}</div>
+          <div class="edu-institution-col">
+            <h3 class="edu-inst">{{ edu.institution }}</h3>
+            <p class="edu-degree mono">{{ edu.degreeOrCourse }}</p>
+          </div>
+          <div class="edu-period-col mono">
+            {{ edu.period }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: Languages -->
+    <section class="bespoke-section">
+      <div class="section-label-bar mono">
+        <span class="section-num">05</span>
+        <span class="section-name">LANGUAGES</span>
+        <span class="section-rule"></span>
+      </div>
+
+      <div class="languages-editorial-grid">
+        <div *ngFor="let l of languages" class="lang-card">
+          <span class="lang-name mono">{{ l.language }}</span>
+          <span class="lang-level">{{ l.level }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06 / Footer: Contact & Colophon -->
+    <footer id="contact" class="bespoke-footer">
+      <div class="footer-top-row">
+        <div class="footer-headline-col">
+          <span class="footer-sub mono">[ CONTACT ]</span>
+          <h2 class="footer-title">GET IN TOUCH</h2>
+        </div>
+
+        <div class="footer-contacts-col mono">
+          <div class="footer-entry">
+            <span class="entry-label">DIRECT EMAIL</span>
+            <a [href]="'mailto:' + email" class="entry-val">{{ email }}</a>
+          </div>
+
+          <div class="footer-entry">
+            <span class="entry-label">PHONE</span>
+            <a [href]="'tel:' + phone" class="entry-val">{{ phone }}</a>
+          </div>
+
+          <div class="footer-entry">
+            <span class="entry-label">LOCATION</span>
+            <span class="entry-val">{{ location }} &bull; {{ country }}</span>
+          </div>
+
+          <div class="footer-entry">
+            <span class="entry-label">LINKEDIN</span>
+            <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer" class="entry-val">
+              {{ linkedinDisplay }} &nearr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row mono">
+        <div class="copyright">
+          &copy; 2026 {{ name }}. ALL RIGHTS RESERVED.
+        </div>
+        <div class="colophon">
+          ANGULAR &bull; CSS ARCHITECTURE &bull; CV EDITION
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
